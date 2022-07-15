@@ -153,6 +153,7 @@ $(el).index();
 
 ```js
 document.body.index();
+document.querySelector("#menu").index();
 ```
 
 #### is
