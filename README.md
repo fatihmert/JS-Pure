@@ -104,6 +104,13 @@ videoEl.waitUntilLoad(function(self){
 This is same the `waitUntilLoad` without callback function.
 
 
+| Index   |      Paremeter      |  Description |  Default |
+|----------|-------------|------|------|
+| 0 |  tick  | Delay for check per | `1000` |
+| 1 | wait | Delay for check duration in `tick` | `500` |
+
+
+
 ```js
 let findDuration = 0;
 
