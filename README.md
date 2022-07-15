@@ -71,6 +71,10 @@ for (let i = 0; i < liItems.length; i++) {
 document.querySelectorAll('li').dispatchEvent(new CustomEvent('render', {detail: {view: 'ok'}}));
 ```
 
+### HTMLElement
+
+Modifications for `HTMLElement`.
+
 ## Required Functions
 
 ### HTMLVideoElement
@@ -95,9 +99,9 @@ videoEl.waitUntilLoad(function(self){
 });
 ```
 
-With promise
+#### waitUntilLoadAsync
 
-> Doesn't need callback parameter
+This is same the `waitUntilLoad` without callback function.
 
 
 ```js
@@ -105,4 +109,102 @@ let findDuration = 0;
 
 videoEl.src = response.newVideoPath;
 findDuration = (await videoEl.waitUntilLoadAsync()).duration;
+```
+
+## jQuery Functions
+
+### Document
+
+#### ready
+
+[Reference](https://youmightnotneedjquery.com/#ready)
+
+<details>
+<summary>jQuery</summary>
+
+```js
+$(document).ready(function(){
+
+});
+```
+</details>
+
+
+```js
+document.ready(function(){
+
+});
+```
+
+### HTMLElement
+
+#### index
+
+[Reference](https://youmightnotneedjquery.com/#index)
+
+<details>
+<summary>jQuery</summary>
+
+```js
+$(el).index();
+```
+</details>
+
+
+```js
+document.body.index();
+```
+
+#### is
+
+[Reference](https://youmightnotneedjquery.com/#matches_selector)
+
+<details>
+<summary>jQuery</summary>
+
+```js
+$(el).is(".test");
+```
+</details>
+
+
+```js
+document.body.is(".test");
+document.querySelector("#menu").is(".test");
+```
+
+#### offset
+
+[Reference](https://youmightnotneedjquery.com/#offset)
+
+<details>
+<summary>jQuery</summary>
+
+```js
+$(el).offset();
+```
+</details>
+
+
+```js
+document.body.offset();
+document.querySelector("#menu").offset();
+```
+
+#### siblings
+
+[Reference](https://youmightnotneedjquery.com/#siblings)
+
+<details>
+<summary>jQuery</summary>
+
+```js
+$(el).siblings();
+```
+</details>
+
+
+```js
+document.body.siblings();
+document.querySelector("#menu").siblings();
 ```
