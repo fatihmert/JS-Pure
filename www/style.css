@@ -225,3 +225,27 @@ table th {
 .minify pre {
     width: 500px;
 }
+
+@media only screen and (max-width: 768px) {
+    .container {
+        max-width: 100%;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .col2{
+        grid-template-columns: 1fr;
+        grid-gap: 0px;
+    }
+
+    section, header{
+        padding: 4rem 2rem;
+    }
+
+    pre, .minify pre {
+        width: calc(100vw - 2rem * 2);
+    }
+}
