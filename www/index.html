@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Pure - fatihmert.dev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <link rel="stylesheet" href="theme.css">    
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+    <main>
+       <header class="container mla mra">
+            <h1 class="center c3 fw700 fs42 my5">JS-Pure</h1>
+            <h2 class="c2 fw400 fs32 my3 lh1-25">
+                Helper functions that solve problems extended with Javascript prototype.
+            </h2>
+            <i class="lh2">Each function is designed to be used alone.</i>
+
+            <a href="https://github.com/fatihmert/JS-Pure" class="share-button-github my5 mla mra">
+                <span>★ Star on Github</span>
+                <span class="github-stars c5">?</span>
+            </a>
+       </header>
+
+       <section>
+            <div class="container mla mra center">
+                <h1 class="c3 fw700 mb5" id="eventtarget" data-anchor>EventTarget</h1>
+                <p class="left mb5">
+                    Single <span>Node</span> object supported <span>addEventListener</span>, <span>removeEventListener</span>, <span>dispatchEvent</span>. 
+                    But NodeList doesn't support with that functions. <span>document.querySelectorAll</span> return as <span>NodeList</span> object. 
+                    If you want use event ops, you should use loop terms.
+                </p>
+            </div>
+            <div class="container container-big mla mra">
+                <h2 class="c3 fw700 my4 center">
+                    addEventListener <!-- <small data-link="">source</small> -->
+                </h2>
+                <div class="col2">
+                    <div>
+                        <h3 class="c3 left my3">Before</h3>
+                        <pre><code class="language-javascript">const liItems = document.querySelectorAll('li');
+for (let i = 0; i < liItems.length; i++) {
+    liItems[i].addEventListener('click', (e) => console.log('Hi'));
+}</code></pre>
+                    </div>
+                    <div>
+                        <h3 class="c3 left my3">After</h3>
+                        <pre><code class="language-javascript">document.querySelectorAll('li').addEventListener('click', (e) => console.log('Hi'))</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container container-big mla mra">
+                <h2 class="c3 fw700 my4 center">
+                    removeEventListener 
+                </h2>
+                <div class="col2">
+                    <div>
+                        <h3 class="c3 left my3">Before</h3>
+                        <pre><code class="language-javascript">function logHi(e){
+    console.log('Hi');
+}
+
+const liItems = document.querySelectorAll('li');
+for (let i = 0; i < liItems.length; i++) {
+    liItems[i].removeEventListener('click', logHi);
+}</code></pre>
+                    </div>
+                    <div>
+                        <h3 class="c3 left my3">After</h3>
+                        <pre><code class="language-javascript">function logHi(e){
+    console.log('Hi');
+}
+
+document.querySelectorAll('li').removeEventListener('click', logHi)</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container container-big mla mra">
+                <h2 class="c3 fw700 my4 center">
+                    dispatchEvent 
+                </h2>
+                <div class="col2">
+                    <div>
+                        <h3 class="c3 left my3">Before</h3>
+                        <pre><code class="language-javascript">const renderEvent = new CustomEvent('render', {detail: {view: 'ok'}});
+const liItems = document.querySelectorAll('li');
+for (let i = 0; i < liItems.length; i++) {
+    liItems[i].dispatchEvent(renderEvent);
+}</code></pre>
+                    </div>
+                    <div>
+                        <h3 class="c3 left my3">After</h3>
+                        <pre><code class="language-javascript">const renderEvent = new CustomEvent('render', {detail: {view: 'ok'}});
+document.querySelectorAll('li').dispatchEvent(renderEvent);</code></pre>
+                    </div>
+                </div>
+            </div>
+
+
+       </section>
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1;
+    transition: all .2s ease;
+}
+
+:root{
+    --c1: #4C3A51;
+    --c2: #774360;
+    --c3: #B25068;
+    --c4: #E7AB79;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--c1);
+    color: var(--c4);
+}
+
+/* oocss */
+.center{text-align: center;}
+.left{text-align: left;}
+
+.c1{ color: var(--c1); }
+.c2{ color: var(--c2); }
+.c3{ color: var(--c3); }
+.c4{ color: var(--c4); }
+.c5{ color: #fff; }
+.c6{ color: #333; }
+
+.bg1{ background: var(--c1); }
+.bg2{ background: var(--c2); }
+.bg3{ background: var(--c3); }
+.bg4{ background: var(--c4); }
+.bg5{ background: #fff; }
+.bg6{ background: #333; }
+
+.fw400{ font-weight: 400; }
+.fw700{ font-weight: 700; }
+
+.fs12{ font-size: 12px; }
+.fs16{ font-size: 16px; }
+.fs24{ font-size: 24px; }
+.fs32{ font-size: 32px; }
+.fs36{ font-size: 36px; }
+.fs42{ font-size: 42px; }
+
+.my1{ margin-top: 2px; margin-bottom: 2px; }
+.my2{ margin-top: 4px; margin-bottom: 4px; }
+.my3{ margin-top: 8px; margin-bottom: 8px; }
+.my4{ margin-top: 1rem; margin-bottom: 1rem; }
+.my5{ margin-top: 2rem; margin-bottom: 2rem; }
+
+.mb5{margin-bottom: 5rem;}
+
+.mla{margin-left: auto;}
+.mra{margin-right: auto;}
+.mta{margin-top: auto;}
+.mba{margin-bottom: auto;}
+
+.lh1{line-height: 1;}
+.lh1-25{line-height: 1.25;}
+.lh1-5{line-height: 1.5;}
+.lh2{line-height: 2;}
+.lh2-5{line-height: 2.5;}
+
+
+/* static */
+main{
+    display: grid;
+    margin: auto;
+    grid-template-columns: 1fr;
+}
+
+.container {
+    max-width: 800px;
+    height: auto;
+    width: 100%;
+}
+
+.container-big{
+    max-width: 1376px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+.share-button-github {
+    display: inline-flex;
+    color: #333;
+    height: 35px;
+}
+
+.share-button-github > span {
+    border: 1px solid #ccc;
+    padding: 0.5em 0.8em;
+}
+
+.share-button-github > span:first-child {
+    margin-right: -1px;
+    background: #eee;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 0;
+    position: relative;
+}
+
+section::before{
+    content: ' ';
+    position: absolute;
+
+}
+
+section:nth-child(2n) {
+    background: rgba(48,48,48, .15);
+}
+
+section:nth-child(2n+1) {
+    background: rgba(255,255,255, .15);
+}
+
+[data-anchor] {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+[data-anchor]::before  {
+    content: '§';
+    position: absolute;
+    left: -20px;
+    opacity: 0;
+}
+
+[data-anchor]:hover {
+    text-decoration: underline;
+}
+
+[data-anchor]:hover::before {
+    opacity: 1;
+}
+
+section p span {
+    display: inline-block;
+    padding: 1px 3px;
+    border-radius: 2px;
+    background: var(--c2);
+    color: rgba(255,255,255,.6);
+    margin: 2px 0;
+}
+
+pre code {
+    text-align: left;
+}
+
+.col2 {
+    columns: 2;
+}
+
+small {
+    font-size: 16px;
+    font-style: italic;
+}
+
+section .container.container-big {
+    margin-bottom: 2.5rem;
+}
