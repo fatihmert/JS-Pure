@@ -128,10 +128,27 @@ section:nth-child(even) {
 }
 
 
-[data-anchor] {
+[data-anchor]{
     position: relative;
     cursor: pointer;
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+}
+
+[data-anchor] svg, .fn svg {
+    fill: var(--c3);
+    height: 18px;
+    margin: auto 8px;
+}
+
+.fn svg {
+    top: 1px;
+    position: relative;
+}
+
+[data-anchor] svg:hover, .fn svg:hover{
+    opacity: .7;
+    cursor: pointer;
 }
 
 [data-anchor]::before  {
@@ -163,7 +180,9 @@ pre code {
 }
 
 .col2 {
-    columns: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
 }
 
 small {

@@ -5,6 +5,16 @@ NodeList.prototype.addEventListener = function(method, callback=()=>{}, useCaptu
     }
 }
 
+// Helper
+function copyToClipboard(text) {
+    const elem = document.createElement('textarea');
+    elem.value = text;
+    document.body.appendChild(elem);
+    elem.select();
+    document.execCommand('copy');
+    document.body.removeChild(elem);
+}
+
 // Separeted functions
 async function setStars(){
     const repoInfo = await (await fetch("https://api.github.com/repos/fatihmert/JS-Pure")).json();
@@ -20,14 +30,27 @@ function anchorLinks(){
 
         anchorLink += '#' + e.target.id.toLowerCase(); 
         window.open(anchorLink, '_self');
+        copyToClipboard(anchorLink);
+    });
+}
+
+function dataLinks(){
+    document.querySelectorAll('[data-link]').addEventListener('click', function(e){
+        let target = e.target;
+        if(target.tagName == "path") {
+            target = target.parentNode;
+        }
+        
+        target.hasAttribute('data-link') && window.open(target.getAttribute('data-link'));
     });
 }
 
 // App
 document.addEventListener('DOMContentLoaded', async function(){
     hljs.highlightAll();
-    
+
     await setStars();
 
     anchorLinks();
+    dataLinks();
 });

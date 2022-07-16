@@ -101,7 +101,7 @@ videoEl.waitUntilLoad(function(self){
 
 #### waitUntilLoadAsync
 
-This is same the `waitUntilLoad` without callback function.
+This is same the `waitUntilLoad` without callback function. Returned `HTMLVideoElement` object.
 
 
 | Index   |      Paremeter      |  Description |  Default |
@@ -153,7 +153,7 @@ document.ready(function(){
 <summary>jQuery</summary>
 
 ```js
-$(el).index();
+$("#menu").index();
 ```
 </details>
 
@@ -171,7 +171,7 @@ document.querySelector("#menu").index();
 <summary>jQuery</summary>
 
 ```js
-$(el).is(".test");
+$("#menu").is(".test");
 ```
 </details>
 
@@ -189,7 +189,7 @@ document.querySelector("#menu").is(".test");
 <summary>jQuery</summary>
 
 ```js
-$(el).offset();
+$("#menu").offset();
 ```
 </details>
 
@@ -207,7 +207,7 @@ document.querySelector("#menu").offset();
 <summary>jQuery</summary>
 
 ```js
-$(el).siblings();
+$("#menu").siblings();
 ```
 </details>
 
