@@ -123,13 +123,10 @@ section::before{
 
 }
 
-section:nth-child(2n) {
+section:nth-child(even) {
     background: rgba(48,48,48, .15);
 }
 
-section:nth-child(2n+1) {
-    background: rgba(255,255,255, .15);
-}
 
 [data-anchor] {
     position: relative;
@@ -152,7 +149,7 @@ section:nth-child(2n+1) {
     opacity: 1;
 }
 
-section p span {
+section p span, section table span {
     display: inline-block;
     padding: 1px 3px;
     border-radius: 2px;
@@ -176,4 +173,36 @@ small {
 
 section .container.container-big {
     margin-bottom: 2.5rem;
+}
+
+table{
+    width: 60%;
+    border-collapse: collapse;
+}
+
+table td, table th {
+    border: 1px solid var(--c2);
+    padding: 8px;
+}
+
+table tr:nth-child(even){
+    background-color: rgba(48,48,48, .3);
+}
+
+table th {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-align: left;
+    background-color: var(--c4);
+    color: white;
+}
+
+.minify  {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.minify pre {
+    width: 500px;
 }

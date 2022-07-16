@@ -102,6 +102,114 @@ document.querySelectorAll('li').dispatchEvent(renderEvent);</code></pre>
                     </div>
                 </div>
             </div>
+       </section>
+
+       <section>
+            <div class="container mla mra center">
+                <h1 class="c3 fw700 mb5" id="htmlvideoelement" data-anchor>HTMLVideoElement</h1>
+            </div>
+
+            <div class="container container-big mla mra">
+                <h2 class="c3 fw700 my4 center">
+                    waitUntilLoad 
+                </h2>
+                <p class="center">
+                    It is custom function for HTML <span>video</span> element. 
+                    If you change continually <span>src</span> attribute of <span>video</span> element, 
+                    normally you should use <span>element.load()</span> function but this function always doesn't work successfully. 
+                    This function solve this issue. 
+                    Check video's duration time per seconds. 
+                    I tested default variables succesfully working with low network connection. 
+                </p>
+
+                <table class="mra mla my5" >
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Paremeter</th>
+                            <th>Description</th>
+                            <th>Default</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>callback</td>
+                            <td>When load, call function</td>
+                            <td><span>()=>{}</span></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>tick</td>
+                            <td>WDelay for check per</td>
+                            <td><span>1000</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>wait</td>
+                            <td>Delay for check duration in <span>tick</span></td>
+                            <td><span>500</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="minify">
+                    <h3 class="c3 left my3 center">Usage</h3>
+                    <div class="mla mra">
+                        <pre><code class="language-javascript">let findDuration = 0;
+
+videoEl.src = response.newVideoPath;
+videoEl.waitUntilLoad(function(self){
+    findDuration = self.duration;
+});</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container container-big mla mra">
+                <h2 class="c3 fw700 my4 center">
+                    waitUntilLoadAsync
+                </h2>
+                <p class="center">
+                    This is same the <span>waitUntilLoad</span> without callback function.
+                </p>
+
+                <table class="mra mla my5" >
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Paremeter</th>
+                            <th>Description</th>
+                            <th>Default</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>tick</td>
+                            <td>WDelay for check per</td>
+                            <td><span>1000</span></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>wait</td>
+                            <td>Delay for check duration in <span>tick</span></td>
+                            <td><span>500</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="minify">
+                    <h3 class="c3 left my3 center">Usage</h3>
+                    <div class="mla mra">
+                        <pre><code class="language-javascript">let findDuration = 0;
+
+videoEl.src = response.newVideoPath;
+findDuration = (await videoEl.waitUntilLoadAsync()).duration;</code></pre>
+                    </div>
+                </div>
+            </div>
+
 
 
        </section>
